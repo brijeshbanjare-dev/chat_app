@@ -1,6 +1,7 @@
 import 'package:chat_app_frontend/custom_ui/custom_card.dart';
 import 'package:chat_app_frontend/models/chat_model.dart';
 import 'package:chat_app_frontend/pallete.dart';
+import 'package:chat_app_frontend/screens/select_contact.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -18,6 +19,8 @@ class _ChatPageState extends State<ChatPage> {
       currentMessage: "Hello Potter, Voldmort here!",
       time: "18:18",
       icon: "assets/person.svg",
+      status: "Magician",
+      select: false,
     ),
     ChatModel(
       name: "Harry Potter",
@@ -25,6 +28,8 @@ class _ChatPageState extends State<ChatPage> {
       currentMessage: "What's Up, Voldmort",
       time: "18:30",
       icon: "assets/person.svg",
+      status: "Magician",
+      select: false,
     ),
     ChatModel(
       name: "Hogwarts",
@@ -32,6 +37,8 @@ class _ChatPageState extends State<ChatPage> {
       currentMessage: "Hello everyone, Dumbledore here!",
       time: "17:17",
       icon: "assets/groups.svg",
+      status: "Magician",
+      select: false,
     ),
   ];
 
@@ -39,7 +46,10 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (builder) => SelectContact()));
+        },
         child: const Icon(
           Icons.chat,
           color: Pallete.whiteColor,

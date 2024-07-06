@@ -4,6 +4,8 @@ class ChatModel {
   final bool isGroup;
   final String time;
   final String currentMessage;
+  final String status;
+  bool select;
 
   ChatModel({
     required this.name,
@@ -11,5 +13,7 @@ class ChatModel {
     required this.isGroup,
     required this.time,
     required this.currentMessage,
+    required this.status,
+    required this.select,
   });
 }
